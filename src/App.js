@@ -1,17 +1,18 @@
 import "./App.css";
-import React, { useState, useEffect, useContext } from "react";
+import Menu from "./components/Menu";
+
 import {
 	BrowserRouter as Router,
 	Routes,
 	Route,
 	Navigate,
 } from "react-router-dom";
-import ProtectedRoute from "./shared/ProtectedRoute";
-import { UserContext } from "./context/UserContext";
-
 import LoginPage from "./components/LoginPage";
 import RegisterPage from "./components/RegisterPage";
-import Menu from "./components/Menu";
+import ProtectedRoute from "./shared/ProtectedRoute";
+import { UserContext } from "./context/UserContext";
+import { useState, useEffect, useContext } from "react";
+
 import HomePage from "./components/HomePage";
 
 function App() {
@@ -57,7 +58,7 @@ function App() {
 				<Route
 					path="/home"
 					element={
-						<ProtectedRoute requiresLogin={true} component={<HomePage />} />
+						<ProtectedRoute requiresLogin={false} component={<HomePage />} />
 					}
 				/>
 				<Route path="*" element={<Navigate to="/login" />} />
