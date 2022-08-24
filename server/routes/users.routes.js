@@ -28,6 +28,12 @@ router.post("/login", async (req, res) => {
 	res.send(resObj);
 });
 
+router.get("/logout", (req, res) => {
+	res.clearCookie("jwt");
+
+	return res.send({ success: true, data: null, error: null });
+});
+
 router.put("/register", async (req, res) => {
 	const { username, password } = req.body;
 	if (!verifyData(username, password)) {

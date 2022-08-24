@@ -21,7 +21,7 @@ function Menu(){
                         onClick={() => {
                             logout()
                         }}
-                        to={"/logout"}
+                        to={"/login"}
                         >Logout</NavLink>
                     </li>
                     </>
