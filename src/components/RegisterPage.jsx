@@ -1,6 +1,6 @@
 import React, { useContext, useState, useMemo } from "react";
 // No longer need useNavigate, but will need NavLink:
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 
 function RegisterPage() {
@@ -13,6 +13,7 @@ function RegisterPage() {
 	const [confirm, setConfirm] = useState("");
 	//global pieces of state from context file
 	const [show, setShow] = useState(false);
+	const navigate = useNavigate();
 
 	//*Add error handling:
 	//* You will wrap these in useMemo to store the results.
@@ -32,106 +33,107 @@ function RegisterPage() {
 		[confirm, password, passError],
 	);
 	return (
-		<>
-			<main className="main">
-				<form>
-					<div className="form-container">
-						<div className="flex column form-element">
-							<label htmlFor="user-name">Username</label>
-							<input
-								value={username}
-								onChange={(e) => {
-									setUsername(e.target.value);
-								}}
-								id="user-name"
-								type="text"
-								className="rounded-lg bg-white"
-							/>
-							<div
-								id="username-error"
-								className={userError ? "error form-text" : "form-text"}
-							>
-								Username Must Be between 4 and 20 characters.
-							</div>
-						</div>
-
-						<div className="flex column form-element">
-							<label htmlFor="password">Password</label>
-							<input
-								value={password}
-								onChange={(e) => {
-									setPassword(e.target.value);
-								}}
-								id="password"
-								type={show === true ? "text" : "password"}
-								className="rounded-lg"
-							/>
-							<span>
-								<label htmlFor="check-box">Show Password</label>
-								<input
-									value={show}
-									onChange={(e) => {
-										setShow(e.target.checked);
-									}}
-									type="checkbox"
-									name="register-checkbox"
-									id="check-box"
-								/>
-							</span>
-							<div
-								id="password-error"
-								className={passError ? "error form-text" : "form-text"}
-							>
-								Password Must Be between 8 and 30 characters
-							</div>
-						</div>
-
-						<div className="flex column form-element">
-							<label htmlFor="confirm">Confirm Password</label>
-							<input
-								value={confirm}
-								onChange={(e) => {
-									setConfirm(e.target.value);
-								}}
-								id="confirm"
-								type={show ? "text" : "password"}
-								className="rounded-lg"
-							/>
-							<div
-								id="password-error"
-								className={confirmError ? "error form-text" : "form-text"}
-							>
-								Passwords Must Match
-							</div>
-						</div>
-
-						<div>
-							<button
-								//* If any errors, set the button to disabled:
-								disabled={confirmError || passError || userError}
-								onClick={(e) => {
-									e.preventDefault();
-									//* If no errors, allow register function to fire:
-									if (!confirmError && !passError && !userError) {
-										register(username, password);
-									}
-								}}
-								type="submit"
-							>
-								Submit
-							</button>
-						</div>
-						<div className="to-login form-element">
-							<p>
-								<NavLink to="/login">
-									Already have an account? Login here.
-								</NavLink>
-							</p>
+	<>
+		<main className="main">
+			<form>
+				<div className="form-container">
+					<div className="flex column form-element">
+						<label htmlFor="user-name">Username</label>
+						<input
+							value={username}
+							onChange={(e) => {
+								setUsername(e.target.value);
+							}}
+							id="user-name"
+							type="text"
+							className="rounded-lg bg-white"
+						/>
+						<div
+							id="username-error"
+							className={userError ? "error form-text" : "form-text"}
+						>
+							Username Must Be between 4 and 20 characters.
 						</div>
 					</div>
-				</form>
-			</main>
-		</>
+
+					<div className="flex column form-element">
+						<label htmlFor="password">Password</label>
+						<input
+							value={password}
+							onChange={(e) => {
+								setPassword(e.target.value);
+							}}
+							id="password"
+							type={show === true ? "text" : "password"}
+							className="rounded-lg"
+						/>
+						<span>
+							<label htmlFor="check-box">Show Password</label>
+							<input
+								value={show}
+								onChange={(e) => {
+									setShow(e.target.checked);
+								}}
+								type="checkbox"
+								name="register-checkbox"
+								id="check-box"
+							/>
+						</span>
+						<div
+							id="password-error"
+							className={passError ? "error form-text" : "form-text"}
+						>
+							Password Must Be between 8 and 30 characters
+						</div>
+					</div>
+
+					<div className="flex column form-element">
+						<label htmlFor="confirm">Confirm Password</label>
+						<input
+							value={confirm}
+							onChange={(e) => {
+								setConfirm(e.target.value);
+							}}
+							id="confirm"
+							type={show ? "text" : "password"}
+							className="rounded-lg"
+						/>
+						<div
+							id="password-error"
+							className={confirmError ? "error form-text" : "form-text"}
+						>
+							Passwords Must Match
+						</div>
+					</div>
+
+					<div>
+						<button
+							//* If any errors, set the button to disabled:
+							disabled={confirmError || passError || userError}
+							onClick={(e) => {
+								e.preventDefault();
+								//* If no errors, allow register function to fire:
+								if (!confirmError && !passError && !userError) {
+									register(username, password);
+									
+								}
+							}}
+							type="submit"
+						>
+							Submit
+						</button>
+					</div>
+					<div className="to-login form-element">
+						<p>
+							<NavLink to="/login">
+								Already have an account? Login here.
+							</NavLink>
+						</p>
+					</div>
+				</div>
+			</form>
+		</main>
+	</>
 	);
 }
 

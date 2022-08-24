@@ -58,7 +58,7 @@ function App() {
 				<Route
 					path="/home"
 					element={
-						<ProtectedRoute requiresLogin={false} component={<HomePage />} />
+						<ProtectedRoute requiresLogin={true} component={<HomePage />} />
 					}
 				/>
 				<Route path="*" element={<Navigate to="/login" />} />
