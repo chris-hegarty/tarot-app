@@ -36,7 +36,8 @@ function App() {
 			<Menu />
 			<header className="flex center">
 				<div>
-					<h1>Tarot Reading</h1>
+					<h1>Tarot Deck</h1>
+					<h2>A simple, three-card reading app.</h2>
 				</div>
 			</header>
 			<Routes>
