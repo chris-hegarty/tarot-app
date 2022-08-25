@@ -38,7 +38,8 @@ export function UserProvider(props) {
 				setLoggedInUser(response.data.data);
 			}
 		} catch (err) {
-			console.log(err);
+			// TODO - Put this back in before deploy.
+			// console.log(err);
 		} finally {
 			return true;
 		}

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const baseUrl = "https://rws-cards-api.herokuapp.com/api/v1/cards/"; // If all of them go to something like https://www.omdb.api this would go there
+const baseUrl = "https://rws-cards-api.herokuapp.com/api/v1/cards"; // If all of them go to something like https://www.omdb.api this would go there
 
 export default function useAxios(url) {
 	// This hook uses state management AND hooks
@@ -15,19 +15,20 @@ export default function useAxios(url) {
 			}
 			setData(null);
 			setError(null);
-			// This is with fetch, but it could just as easily be with axios
 			try {
-				// OR USING AXIOS
 				const response = await axios.get(baseUrl + url);
-				const cards = response.data.data.map((val) => ({
-					name: val.cards.name,
-					name_short: val.cards.name_short,
-					type: val.cards.type,
-					meaning_up: val.cards.meaning_up,
-					meaning_rev: val.cards.meaning_rev,
-                    desc: val.cards.desc
+				// console.log(response.data.cards);
+				const cards = response.data.cards.map((val) => ({
+					name: val.name,
+					name_short: val.name_short,
+					type: val.type,
+					meaning_up: val.meaning_up,
+					meaning_rev: val.meaning_rev,
+                    desc: val.desc
 				}));
+				
 				setData(cards);
+				// console.log(cards);
 			} catch (e) {
 				setError("Something went wrong, please try again later");
 			}
