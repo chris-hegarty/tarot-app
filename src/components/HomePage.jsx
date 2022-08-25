@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from "react";
 
 function HomePage() {
-  return (
+	const [show, setShow] = useState(false);
+
+	return (
 		<div>
 			<h3>Getting Started</h3>
 			<p>
@@ -16,11 +18,20 @@ function HomePage() {
 			<p>When you are ready, click below to get three cards.</p>
 			<section className="card-section">
 				<div className="button-container">
-					<button>Get Cards</button>
+					<button 
+					onClick={(e)=>{
+						e.preventDefault();
+						setShow(true);
+					}}
+					className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+						Get Cards
+					</button>
 				</div>
-				<p>Now, one by one, click to to reveal the card and its description.</p>
-				<div className="three-card-container">
-					<div className="card" id="card-one">
+				<div className={!show ? "hidden three-card-container" : "three-card container"}>
+					<p>
+						Now, one by one, click to to reveal the card and its description.
+					</p>
+					<div className="card flex" id="card-one">
 						<div className="section-left card-image">
 							<button>
 								<picture>
@@ -61,7 +72,7 @@ function HomePage() {
 							</p>
 						</div>
 					</div>
-					<div className="card" id="card-two">
+					<div className="card flex" id="card-two">
 						<div className="section-left card-image">
 							<button>
 								<picture>
@@ -102,7 +113,7 @@ function HomePage() {
 							</p>
 						</div>
 					</div>
-					<div className="card" id="card-three">
+					<div className="card flex" id="card-three">
 						<div className="section-left card-image">
 							<button>
 								<picture>
@@ -149,4 +160,4 @@ function HomePage() {
 	);
 }
 
-export default HomePage
+export default HomePage;
