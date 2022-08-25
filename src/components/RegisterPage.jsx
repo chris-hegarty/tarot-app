@@ -1,6 +1,6 @@
 import React, { useContext, useState, useMemo } from "react";
 // No longer need useNavigate, but will need NavLink:
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 
 function RegisterPage() {
@@ -13,7 +13,6 @@ function RegisterPage() {
 	const [confirm, setConfirm] = useState("");
 	//global pieces of state from context file
 	const [show, setShow] = useState(false);
-	const navigate = useNavigate();
 
 	//*Add error handling:
 	//* You will wrap these in useMemo to store the results.
