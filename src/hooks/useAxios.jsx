@@ -19,7 +19,7 @@ export default function useAxios(url) {
 				const response = await axios.get(baseUrl + url);
 				// console.log(response.data.cards);
 				const cards = response.data.cards.map(val => {
-					let upDown = Math.floor(Math.random() * 2) === 0 ? "up" : "down";
+					let upDown = Math.floor(Math.random() * 2) === 0 ? "upright" : "reversed";
 					return {
 						name: val.name,
 						name_short: val.name_short,
