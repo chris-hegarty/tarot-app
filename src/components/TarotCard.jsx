@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useState } from "react";
 
-function TarotCard() {
-  return (
+function TarotCard({card, revealCard, setRevealCard}) {
+
+	const { name, name_short, type, meaning_up, desc } = card;
+	return (
 		<div className="card flex" id="card-two">
 			<div className="section-left card-image">
-				<button>
+				<button
+					onClick={(e) => {
+						e.preventDefault();
+						setRevealCard(true);
+					}}
+				>
 					<picture>
 						<img
 							src="../../images/cards/tarot-back-527.jpg"
@@ -14,7 +21,13 @@ function TarotCard() {
 					</picture>
 				</button>
 			</div>
-			<div className="section-right card-meaning">
+			<div
+				className={
+					!revealCard
+						? "section-right card-meaning invisible"
+						: "section-right card-meaning"
+				}
+			>
 				<h3>Title of Card</h3>
 				<div className="card-suit-and-type">
 					<p>Suit: xxxxxx</p>
@@ -46,4 +59,4 @@ function TarotCard() {
 	);
 }
 
-export default TarotCard
+export default TarotCard;

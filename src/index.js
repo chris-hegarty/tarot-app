@@ -5,12 +5,15 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import ErrorBoundary from "./ErrorBoundary";
 import { UserProvider } from "./context/UserContext";
+import { TarotCardProvider } from "./context/TarotCardContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
 	<ErrorBoundary>
 		<UserProvider>
-			<App />
+			<TarotCardProvider>
+				<App />
+			</TarotCardProvider>
 		</UserProvider>
 	</ErrorBoundary>,
 );
