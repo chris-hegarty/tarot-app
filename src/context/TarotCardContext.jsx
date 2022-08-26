@@ -1,11 +1,20 @@
 
-import React, { useState, createContext } from "react";
+import React, { createContext } from "react";
 // import useAxios from "../hooks/useAxios";
 export const TarotCardContext = createContext(null);
 
 export function TarotCardProvider(props){
-	const [revealCard, setRevealCard] = useState(false);
+	
+    
 
+	return (
+		<TarotCardContext.Provider value={{ }}>
+			{props.children}
+		</TarotCardContext.Provider>
+	);
+}
+
+//*Notes:
 	//**** Example from Trivia App:
 	// ****Here is where you set your api data into contexts you've set up for card and category. ex: setQuestion turns question into the "question" part from the API url:
 	//* useEffect(() => {
@@ -16,12 +25,3 @@ export function TarotCardProvider(props){
 	//* }, [card, setQuestion, setAnswers, setSelected]);
 
 	//TODO - Put the axios call in a function that you can call in the Home page button.
-
-	return (
-		<TarotCardContext.Provider
-			value={{ revealCard, setRevealCard }}
-		>
-			{props.children}
-		</TarotCardContext.Provider>
-	);
-}

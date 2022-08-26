@@ -3,9 +3,6 @@ import useAxios from "../hooks/useAxios";
 import { TarotCardContext } from "../context/TarotCardContext";
 import TarotCard from "./TarotCard"
 
-//!Data needs to come in here via props.
-//!Which can be a destructured object.
-
 function HomePage(props) {
 	const [show, setShow] = useState(false);
 	const [url, setUrl] = useState("");
@@ -32,6 +29,7 @@ function HomePage(props) {
 							e.preventDefault();
 							setShow(true);
 							setUrl(`/random/?n=3`);
+							// setMeaning()
 						}}
 						className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
 					>
@@ -56,8 +54,12 @@ function HomePage(props) {
 								name_short={c.name_short}
 								name={c.name}
 								type={c.type}
-								meaning_up={c.meaning_up}
+								suit={c.suit}
+								meaning={c.meaning}
 								desc={c.desc}
+								revealCard={revealCard}
+								setRevealCard={setRevealCard}
+								
 							/>
 						))}
 				</div>

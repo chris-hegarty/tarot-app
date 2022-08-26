@@ -18,15 +18,22 @@ export default function useAxios(url) {
 			try {
 				const response = await axios.get(baseUrl + url);
 				// console.log(response.data.cards);
-				const cards = response.data.cards.map((val) => ({
-					name: val.name,
-					name_short: val.name_short,
-					type: val.type,
-					meaning_up: val.meaning_up,
-					meaning_rev: val.meaning_rev,
-                    desc: val.desc
-				}));
-				
+				const cards = response.data.cards.map(val => {
+					let upDown = Math.floor(Math.random() * 2) === 0 ? "up" : "down";
+					return {
+						name: val.name,
+						name_short: val.name_short,
+						type: val.type,
+						suit: val.suit,
+						desc: val.desc,
+						orientation: upDown,
+						meaning: 
+						upDown === "up" 
+						? val.meaning_up
+						: val.meaning_rev		
+					}				
+				});
+
 				setData(cards);
 				// console.log(cards);
 			} catch (e) {
