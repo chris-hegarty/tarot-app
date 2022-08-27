@@ -32,4 +32,11 @@ router.get("/user", auth, async (req, res) => {
 	return res.send(resObj);
 });
 
+router.delete("/delete/:card_id", auth, async (req, res) => {
+	const card_id = req.params.card_id;
+	const resObj = await remove(card_id, req.user.id);
+
+	return res.send(resObj);
+});
+
 module.exports = router;

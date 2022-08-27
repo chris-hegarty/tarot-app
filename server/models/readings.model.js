@@ -42,5 +42,21 @@ async function getByUser(user_id) {
 	}
 }
 
+async function remove(card_id, user_id) {
+	try {
+		await query("DELETE FROM readings WHERE card.id = ?", [card_id, user_id]);
+		return { success: true, data: "The reading was deleted.", error: null };
+	} catch (err) {
+		return {
+			success: false,
+			data: null,
+			error: "Something went wrong",
+		};
+	}
+	//remove it
+	//send back response
+}
+
 module.exports.add = add;
+module.exports.remove = remove;
 module.exports.getByUser = getByUser;
