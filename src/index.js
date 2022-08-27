@@ -6,14 +6,17 @@ import reportWebVitals from "./reportWebVitals";
 import ErrorBoundary from "./ErrorBoundary";
 import { UserProvider } from "./context/UserContext";
 import { TarotCardProvider } from "./context/TarotCardContext";
+import { ReadingsProvider } from "./context/ReadingsContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
 	<ErrorBoundary>
 		<UserProvider>
-			<TarotCardProvider>
-				<App />
-			</TarotCardProvider>
+			<ReadingsProvider>
+				<TarotCardProvider>
+					<App />
+				</TarotCardProvider>
+			</ReadingsProvider>
 		</UserProvider>
 	</ErrorBoundary>,
 );
