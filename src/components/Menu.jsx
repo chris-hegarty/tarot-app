@@ -14,7 +14,7 @@ function Menu(){
 						<picture>
 							<img src="../images/logo-110.png" alt="site-logo" width="80" />
 						</picture>
-						<p className="text-4xl logo-font">Tarot Deck</p>
+						<p className="text-4xl logo-font">Tarot</p>
 					</div>
 					<ul className="flex gap-6 ">
 						{loggedInUser && (

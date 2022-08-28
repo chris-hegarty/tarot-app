@@ -5,7 +5,7 @@ function TarotCard({ card }) {
 	const { name, name_short, type, suit, meaning, orientation, desc } = card;
 
 	return (
-		<article className="card flex flex-wrap">
+		<article className="card flex flex-col basis-1/3 px-2.5">
 			<div className="section-left card-image">
 				<button
 					onClick={(e) => {
@@ -13,12 +13,18 @@ function TarotCard({ card }) {
 						setRevealCard(true);
 					}}
 				>
-					<picture>
+					<picture
+						className={
+							!revealCard
+							? "face-back"
+							: "face-front"
+						}
+					>
 						<img
 							className={
 								orientation === "reversed"
-									? "card transform rotate-180"
-									: "card"
+									? "card-face transform rotate-180"
+									: "card-face"
 							}
 							src={
 								!revealCard
