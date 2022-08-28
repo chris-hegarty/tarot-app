@@ -10,10 +10,11 @@ function Menu(){
     return (
 			<>
 				<nav className="flex justify-between px-8 py-2 items-center text-white">
-					<div className="logo-container">
+					<div className="logo-container flex items-center gap-4">
 						<picture>
 							<img src="../images/logo-110.png" alt="site-logo" width="80" />
 						</picture>
+						<p className="text-4xl logo-font">Tarot Deck</p>
 					</div>
 					<ul className="flex gap-6 ">
 						{loggedInUser && (

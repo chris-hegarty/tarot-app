@@ -37,6 +37,65 @@
   }
 }
 
+/* Begin Tarot Card CSS */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+label,
+a,
+button {
+  font-family: 'Rubik', sans-serif;
+    margin-bottom: 1.2rem;
+}
+h2 {
+  font-family: 'Vollkorn SC', serif;
+font-weight: 600;
+  color: #2c2c2d;
+  font-size: 38px;
+}
+button {
+  font-family: 'Rubik', sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+p, li {
+  font-size: 1rem;
+}
+li {
+margin-bottom: .2em;
+}
+
 nav {
   background-color: #0b0b31;
+}
+nav ul, nav li, nav a, nav p {
+  margin-bottom: 0;
+}
+ul {
+  list-style-image: url("/public/images/li-arrow.png");
+  list-style-position: inside;
+}
+
+.logo-font {
+  font-family: 'Aboreto', cursive;
+}
+
+.button-container {
+  background-image: url("/public/images/tarot-hero.jpg");
+  background-position: 50% 80%;
+}
+
+.home-top img {
+  border-radius: 68px;
+}
+
+section.home-top {
+  background-color: #e6d1b4;
 }

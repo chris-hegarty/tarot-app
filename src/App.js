@@ -34,12 +34,12 @@ function App() {
 	return (
 		<Router>
 			<Menu />
-			<header className="flex center">
+			{/* <header className="flex center">
 				<div>
 					<h1>Tarot Deck</h1>
 					<h2>A simple, three-card reading app.</h2>
 				</div>
-			</header>
+			</header> */}
 			<Routes>
 				<Route
 					path="/login"

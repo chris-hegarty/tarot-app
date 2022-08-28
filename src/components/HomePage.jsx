@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import useAxios from "../hooks/useAxios";
 import { TarotCardContext } from "../context/TarotCardContext";
-import TarotCard from "./TarotCard"
+import TarotCard from "./TarotCard";
 
 function HomePage(props) {
 	const [show, setShow] = useState(false);
@@ -10,20 +10,34 @@ function HomePage(props) {
 	const { revealCard, setRevealCard } = useContext(TarotCardContext);
 
 	return (
-		<div>
-			<h3>Getting Started</h3>
-			<p>
-				Use this three card spread to think about a path, or sequence of events,
-				such as:
-			</p>
-			<ul>
-				<li>Past | Present | Future</li>
-				<li>A Situation | An Action | An Outcome</li>
-				<li>Option 1 | Option 2 | Advice/Direction</li>
-			</ul>
-			<p>When you are ready, click below to get three cards.</p>
+		<main>
+			<section className="home-top flex">
+				<div className="half left basis-1/2 p-16">
+					<h2 className="">Getting Started</h2>
+					<p>
+						Use this three-card, linear spread to think about a path, or sequence of
+						events, such as:
+					</p>
+					<ul>
+						<li>Past | Present | Future</li>
+						<li>A Situation | An Action | An Outcome</li>
+						<li>Option 1 | Option 2 | Advice/Direction</li>
+					</ul>
+					<p>When you are ready, click the button below to get three cards.</p>
+				</div>
+				<div className="half right basis-1/2">
+					<picture>
+						<img
+							src="../../images/card-mix.png"
+							alt="Mix of Tarot Cards."
+							width="600"
+							className="p-16 rounded"
+						/>
+					</picture>
+				</div>
+			</section>
 			<section className="card-section">
-				<div className="button-container">
+				<div className="button-container flex justify-center py-16">
 					<button
 						onClick={(e) => {
 							e.preventDefault();
@@ -63,7 +77,7 @@ function HomePage(props) {
 						))}
 				</div>
 			</section>
-		</div>
+		</main>
 	);
 }
 
