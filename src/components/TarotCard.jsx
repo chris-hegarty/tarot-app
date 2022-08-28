@@ -13,13 +13,7 @@ function TarotCard({ card }) {
 						setRevealCard(true);
 					}}
 				>
-					<picture
-						className={
-							!revealCard
-							? "face-back"
-							: "face-front"
-						}
-					>
+					<picture>
 						<img
 							className={
 								orientation === "reversed"
