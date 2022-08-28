@@ -62,16 +62,6 @@ function HomePage(props) {
 							/>
 						))}
 				</div>
-				{cards &&
-					<div className="next-steps flex justify-center gap-2">
-						<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-							Save This Reading
-						</button>
-						<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-							Start Over
-						</button>
-					</div>
-				}
 			</section>
 		</div>
 	);
