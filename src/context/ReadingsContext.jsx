@@ -28,7 +28,7 @@ export function ReadingsProvider(props) {
 					setReadings(response.data.data);
 				}
 			} catch (err) {
-				console.log(err);
+				// console.log(err);
 			}
 		}
 		//* now immediately call the init() function:
