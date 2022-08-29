@@ -14,7 +14,11 @@ function TarotCard({ card }) {
 				id="flip-card"
 			>
 				<div className="card-container section-left card-image">
-					<picture className="card">
+					<picture className={
+								orientation === "reversed"
+									? "card card-face transform rotate-180"
+									: "card card-face"
+							}>
 						<img
 							src={`../../images/cards/${name_short}.jpg`}
 							alt={`${name}`}
