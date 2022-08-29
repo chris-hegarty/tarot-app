@@ -5,38 +5,31 @@ function TarotCard({ card }) {
 	const { name, name_short, type, suit, meaning, orientation, desc } = card;
 
 	return (
-		<article className="card flex flex-col basis-1/3 px-2.5">
-			<div className="section-left card-image">
-				<button
-					onClick={(e) => {
-						e.preventDefault();
-						setRevealCard(true);
-					}}
-				>
-					<picture
-						className={
-							!revealCard
-							? "face-back"
-							: "face-front"
-						}
-					>
+		<article className="cards-article flex flex-col basis-1/3 px-2.5">
+			<button
+				onClick={(e) => {
+					e.preventDefault();
+					setRevealCard(true);
+				}}
+				id="flip-card"
+			>
+				<div className="card-container section-left card-image">
+					<picture className="card">
 						<img
-							className={
-								orientation === "reversed"
-									? "card-face transform rotate-180"
-									: "card-face"
-							}
-							src={
-								!revealCard
-									? "../../images/cards/tarot-back-527.jpg"
-									: `../../images/cards/${name_short}.jpg`
-							}
-							alt={!revealCard ? "Tarot card face down" : `${name}`}
-							height="400px"
+							src={`../../images/cards/${name_short}.jpg`}
+							alt={`${name}`}
+							className={revealCard ? "card-back flipped" : "card-back"}
+							id="back"
+						/>
+						<img
+							src="../../images/cards/tarot-back-527.jpg"
+							alt="Tarot card face down"
+							className={revealCard ? "card-front flipped" : "card-front"}
+							id="front"
 						/>
 					</picture>
-				</button>
-			</div>
+				</div>
+			</button>
 			<div
 				className={
 					!revealCard
