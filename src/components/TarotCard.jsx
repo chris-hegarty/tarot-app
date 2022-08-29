@@ -13,7 +13,13 @@ function TarotCard({ card }) {
 						setRevealCard(true);
 					}}
 				>
-					<picture>
+					<picture
+						className={
+							!revealCard
+							? "face-back"
+							: "face-front"
+						}
+					>
 						<img
 							className={
 								orientation === "reversed"
@@ -29,8 +35,8 @@ function TarotCard({ card }) {
 							height="400px"
 						/>
 					</picture>
-				</button>
-			</div>
+				</div>
+			</button>
 			<div
 				className={
 					!revealCard

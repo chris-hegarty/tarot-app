@@ -52,7 +52,7 @@ function HomePage(props) {
 						Get Cards
 					</button>
 				</div>
-				<div className={!show ? "card-container hidden " : "card-container"}>
+				<div className={!show ? "cards-container hidden" : "cards-container"}>
 					<p>
 						Now, one by one, click to to reveal the card and its description.
 					</p>
