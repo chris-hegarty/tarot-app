@@ -19,60 +19,48 @@ function LoginPage() {
         [username]
     )
   return (
-	<>
-		<main className="main">
-			<form>
-				<div className="form-container">
-					<div className="flex column form-element">
-						<label htmlFor="user-name">Username</label>
-						<input
-							value={username}
-							onChange={(e) => {
-								setUsername(e.target.value);
-							}}
-							id="user-name"
-							type="text"
-							className="rounded-lg bg-white"
-						/>
-						<div
-							id="username-error"
-							className={userError ? "error form-text" : "form-text"}
-						>
-							Username Must Be between 4 and 20 characters.
-						</div>
-					</div>
-
-					<div className="flex column form-element">
-						<label htmlFor="password">Password</label>
-						<input
-							value={password}
-							onChange={(e) => {
-								setPassword(e.target.value);
-							}}
-							id="password"
-							type={show === true ? "text" : "password"}
-							className="rounded-lg"
-						/>
-						<span>
-							<label htmlFor="check-box">Show Password</label>
+		<>
+			<main className="main login-register flex flex-col justify-center align-middle">
+				<form className="flex content-center justify-center">
+					<div className="form-container flex flex-col justify-center align-middle p-10">
+						<div className="flex flex-col form-element">
+							<label htmlFor="user-name">Username</label>
 							<input
-								value={show}
+								value={username}
 								onChange={(e) => {
-									setShow(e.target.checked);
+									setUsername(e.target.value);
 								}}
-								type="checkbox"
-								name="register-checkbox"
-								id="check-box"
+								id="user-name"
+								type="text"
+								className="rounded-lg bg-white"
 							/>
-						</span>
-						<div
-							id="password-error"
-							className={passError ? "error form-text" : "form-text"}
-						>
-							Password Must Be between 8 and 30 characters
 						</div>
-					</div>
-					<div>
+
+						<div className="flex flex-col form-element">
+							<label htmlFor="password">Password</label>
+							<input
+								value={password}
+								onChange={(e) => {
+									setPassword(e.target.value);
+								}}
+								id="password"
+								type={show === true ? "text" : "password"}
+								className="rounded-lg"
+							/>
+							<span>
+								<label htmlFor="check-box">Show Password</label>
+								<input
+									value={show}
+									onChange={(e) => {
+										setShow(e.target.checked);
+									}}
+									type="checkbox"
+									name="register-checkbox"
+									id="check-box"
+								/>
+							</span>
+						</div>
+						<div>
 							<button
 								//* If any errors, set the button to disabled:
 								disabled={passError || userError}
@@ -84,26 +72,24 @@ function LoginPage() {
 									}
 								}}
 								type="submit"
+								className="bg-red-700 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"
 							>
 								Submit
 							</button>
 						</div>
 
-
-						
-						<div className="to-login form-element">
+						<div className="to-login form-element my-4">
 							<p>
 								<NavLink to="/register">
 									Don't have an account? Register here
 								</NavLink>
 							</p>
 						</div>
-					
-				</div>
-			</form>
-		</main>
-	</>
-  )
+					</div>
+				</form>
+			</main>
+		</>
+	);
 }
 
 export default LoginPage

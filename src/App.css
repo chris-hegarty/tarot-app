@@ -38,6 +38,32 @@
 }
 
 /* Begin Tarot Card CSS */
+main.login-register {
+  background-image: url("../public/images/tarot-hero.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+label {
+  margin: 0;
+  padding: 0;
+}
+.form-container {
+  backdrop-filter: blur(30px);
+  border-radius: 12px;
+}
+label, .error.form-text, .form-element a {
+  color: #ffffff;
+}
+input {
+  height: 36px;
+}
+span input {
+  height: initial;
+}
 
 h1,
 h2,
@@ -48,12 +74,11 @@ h6,
 p,
 ul,
 li,
-label,
 a,
 button {
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Forum', sans-serif;
     margin-bottom: 1.2rem;
-    font-weight: 600;
+    font-weight: 400;
 }
 h2 {
   font-family: 'Nunito Sans', serif;
@@ -71,6 +96,9 @@ p, li {
 }
 li {
 margin-bottom: .2em;
+}
+input {
+  margin-bottom: 1em;
 }
 
 nav {
@@ -99,6 +127,12 @@ ul {
 
 section.home-top {
   background-color: #d2cec5;
+}
+
+@media (min-width:600px) {
+  form{
+    width: 50%;
+  }
 }
 
 .card {
