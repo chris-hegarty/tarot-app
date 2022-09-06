@@ -74,6 +74,12 @@ span input {
 	font-size: 14px;
 }
 
+.form-text p {
+	font-size: 14px;
+	color: #fff;
+	margin-bottom: 0;
+}
+
 h1,
 h2,
 h3,
