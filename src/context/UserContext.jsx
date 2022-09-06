@@ -5,7 +5,7 @@ export const UserContext = createContext(null);
 
 export function UserProvider(props) {
 	//state and functionality goes here:
-	const [loggedInUser, setLoggedInUser] = useState(null);
+	const [loggedInUser, setLoggedInUser] = useState("CHris");
 	//*add and update functions:
 
 	//*Here is a new register function.
