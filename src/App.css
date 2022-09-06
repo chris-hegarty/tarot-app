@@ -1,68 +1,77 @@
 .App {
-  text-align: center;
+	text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+	height: 40vmin;
+	pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+	.App-logo {
+		animation: App-logo-spin infinite 20s linear;
+	}
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+	background-color: #282c34;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
 }
 
 .App-link {
-  color: #61dafb;
+	color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }
 
 /* Begin Tarot Card CSS */
 main.login-register {
-  background-image: url("../public/images/tarot-hero.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	background-image: url("../public/images/tarot-hero.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 label {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
 }
 .form-container {
-  backdrop-filter: blur(30px);
-  border-radius: 12px;
+	backdrop-filter: blur(30px);
+	border-radius: 12px;
+	width: 75%;
 }
-label, .error.form-text, .form-element a {
-  color: #ffffff;
+label,
+.error.form-text,
+.form-element a {
+	color: #ffffff;
 }
 input {
-  height: 36px;
+	height: 42px;
+	padding: 16px;
 }
 span input {
-  height: initial;
+	height: initial;
+}
+
+.to-login p {
+	font-size: 14px;
 }
 
 h1,
@@ -76,101 +85,115 @@ ul,
 li,
 a,
 button {
-  font-family: 'Forum', sans-serif;
-    margin-bottom: 1.2rem;
-    font-weight: 400;
+	font-family: "Forum", sans-serif;
+	margin-bottom: 1.2rem;
+	font-weight: 400;
 }
 h2 {
-  font-family: 'Nunito Sans', serif;
-font-weight: 600;
-  color: #2c2c2d;
-  font-size: 38px;
+	font-family: "Nunito Sans", serif;
+	font-weight: 600;
+	color: #2c2c2d;
+	font-size: 38px;
 }
 button {
-  font-family: 'Rubik', sans-serif;
-  text-transform: uppercase;
-  margin-bottom: 0;
+	font-family: "Rubik", sans-serif;
+	margin-bottom: 0;
+	font-size: 14px;
 }
-p, li {
-  font-size: 1rem;
+a:hover {
+	color: rgba(249, 17, 5);
+}
+#password {
+	margin-bottom: 0;
+}
+.error p {
+	margin-bottom: 0;
+	font-size: 12px;
+	margin-top: 6px;
+	margin-right: 2px;
+}
+p,
+li {
+	font-size: 1rem;
 }
 li {
-margin-bottom: .2em;
+	margin-bottom: 0.2em;
 }
 input {
-  margin-bottom: 1em;
+	margin-bottom: 1em;
 }
 
 nav {
-  background-color: #0b0b31;
+	background-color: #0b0b31;
 }
-nav ul, nav li, nav a, nav p {
-  margin-bottom: 0;
+nav ul,
+nav li,
+nav a,
+nav p {
+	margin-bottom: 0;
 }
 ul {
-  list-style-image: url("/public/images/li-arrow.png");
-  list-style-position: inside;
+	list-style-image: url("/public/images/li-arrow.png");
+	list-style-position: inside;
 }
 
 .logo-font {
-  font-family: 'Aboreto', cursive;
+	font-family: "Aboreto", cursive;
 }
 
 .button-container {
-  background-image: url("/public/images/tarot-hero.jpg");
-  background-position: 50% 80%;
+	background-image: url("/public/images/tarot-hero.jpg");
+	background-position: 50% 80%;
 }
 
 .home-top img {
-  border-radius: 68px;
+	border-radius: 68px;
 }
 
 section.home-top {
-  background-color: #d2cec5;
+	background-color: #d2cec5;
 }
 
-@media (min-width:600px) {
-  form{
-    width: 50%;
-  }
+@media (min-width: 600px) {
+	form {
+		width: 50%;
+	}
 }
 
 .card {
-  height: 520px;
-  width: 320px;
-  position: relative;
-  border-radius: 0.25rem;
+	height: 520px;
+	width: 320px;
+	position: relative;
+	border-radius: 0.25rem;
 }
 .card-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: auto;
 }
-.card-front, .card-back {
-  height: 100%;
-  width: 100%;
-  box-sizing: border-box;
-  position: absolute;
-  transition: transform 0.5s ease;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+.card-front,
+.card-back {
+	height: 100%;
+	width: 100%;
+	box-sizing: border-box;
+	position: absolute;
+	transition: transform 0.5s ease;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
 }
 .card-back {
-  transform: perspective(1000px) rotateY(180deg);
+	transform: perspective(1000px) rotateY(180deg);
 }
 
 .card-back.flipped {
-  transform: perspective(1000px) rotateY(0deg);
+	transform: perspective(1000px) rotateY(0deg);
 }
 
 .card-front {
-  transform: perspective(1000px) rotateY(0deg);
+	transform: perspective(1000px) rotateY(0deg);
 }
 
 .card-front.flipped {
-  transform: perspective(1000px) rotateY(-180deg);
+	transform: perspective(1000px) rotateY(-180deg);
 }
-
-
-

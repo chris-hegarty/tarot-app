@@ -35,7 +35,7 @@ function LoginPage() {
 							/>
 						</div>
 
-						<div className="flex flex-col form-element">
+						<div className="flex flex-col form-element mb-4">
 							<label htmlFor="password">Password</label>
 							<input
 								value={password}
@@ -46,7 +46,7 @@ function LoginPage() {
 								type={show === true ? "text" : "password"}
 								className="rounded-lg"
 							/>
-							<span>
+							<span className="flex items-center justify-end">
 								<label htmlFor="check-box">Show Password</label>
 								<input
 									value={show}
@@ -56,7 +56,7 @@ function LoginPage() {
 									type="checkbox"
 									name="register-checkbox"
 									id="check-box"
-									className="ml-2"
+									className="ml-2 mb-0"
 								/>
 							</span>
 						</div>
@@ -72,7 +72,7 @@ function LoginPage() {
 									}
 								}}
 								type="submit"
-								className="bg-red-700 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"
+								className="w-full bg-red-700 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"
 							>
 								Submit
 							</button>
