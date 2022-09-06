@@ -107,7 +107,7 @@ function RegisterPage() {
 								onChange={(e) => {
 									setPassword(e.target.value);
 								}}
-								id="password"
+								id="confirm-password"
 								type={show === true ? "text" : "password"}
 								className="rounded-lg"
 							/>
