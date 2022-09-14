@@ -16,9 +16,17 @@ async function register(username, password) {
 			username,
 		]);
 
-		return { success: true, data: "Successfully registered!", error: null };
+		return {
+			success: true,
+			data: "Successfully registered from model",
+			error: null,
+		};
 	} catch (err) {
-		return { success: false, data: null, error: "Something went wrong." };
+		return {
+			success: false,
+			data: null,
+			error: "Something went wrong. This is from model.",
+		};
 	}
 }
 
