@@ -1,6 +1,7 @@
+import { logDOM } from "@testing-library/react";
 import React, { useContext, useState, useMemo } from "react";
 // No longer need useNavigate, but will need NavLink:
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 
 function RegisterPage() {
@@ -13,6 +14,7 @@ function RegisterPage() {
 	const [confirm, setConfirm] = useState("");
 	//global pieces of state from context file
 	const [show, setShow] = useState(false);
+	const navigate = useNavigate();
 
 	//*Add error handling:
 	//* You will wrap these in useMemo to store the results.
@@ -105,7 +107,7 @@ function RegisterPage() {
 							<input
 								value={password}
 								onChange={(e) => {
-									setPassword(e.target.value);
+									setConfirm(e.target.value);
 								}}
 								id="confirm-password"
 								type={show === true ? "text" : "password"}
@@ -116,12 +118,14 @@ function RegisterPage() {
 						<div>
 							<button
 								//* If any errors, set the button to disabled:
-								disabled={confirmError || passError || userError}
+								// disabled={confirmError || passError || userError}
 								onClick={(e) => {
 									e.preventDefault();
 									//* If no errors, allow register function to fire:
+									console.log("whats here");
 									if (!confirmError && !passError && !userError) {
 										register(username, password);
+										navigate("/login");
 									}
 								}}
 								type="submit"
