@@ -38,8 +38,7 @@ router.put("/register", async (req, res) => {
 		return res.send({
 			success: false,
 			data: null,
-			error:
-				"Please check that your username and password meet the requirements.",
+			error: "Username or password do not meet requirements.",
 		});
 	}
 	//* If the username and password meet the requirements, put them in an object:
