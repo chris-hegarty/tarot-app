@@ -13,6 +13,7 @@ export function UserProvider(props) {
 	//*The request goes to the route set up in route file, then to model, then response back from model to route
 	const register = useCallback(async (username, password) => {
 		console.log("anything here from UserContext?");
+		console.log(username, password);
 		try {
 			const response = await axios.put("/api/users/register", {
 				username,
