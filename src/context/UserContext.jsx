@@ -40,7 +40,7 @@ export function UserProvider(props) {
 			}
 		} catch (err) {
 			// TODO - Put this back in before deploy.
-			// console.log(err);
+			console.log(err);
 		} finally {
 			return true;
 		}
