@@ -49,9 +49,7 @@ function RegisterPage() {
 							</div>
 							<input
 								value={username}
-								onChange={(e) => {
-									setUsername(e.target.value);
-								}}
+								onChange={(e) => setUsername(e.target.value)}
 								id="user-name"
 								type="text"
 								className="rounded-lg bg-white"
@@ -70,9 +68,7 @@ function RegisterPage() {
 							</div>
 							<input
 								value={password}
-								onChange={(e) => {
-									setPassword(e.target.value);
-								}}
+								onChange={(e) => setPassword(e.target.value)}
 								id="password"
 								type={show === true ? "text" : "password"}
 								className="rounded-lg"
@@ -105,9 +101,7 @@ function RegisterPage() {
 							</div>
 							<input
 								value={confirm}
-								onChange={(e) => {
-									setConfirm(e.target.value);
-								}}
+								onChange={(e) => setConfirm(e.target.value)}
 								id="confirm-password"
 								type={show === true ? "text" : "password"}
 								className="rounded-lg"
@@ -117,7 +111,7 @@ function RegisterPage() {
 						<div>
 							<button
 								//* If any errors, set the button to disabled:
-								// disabled={confirmError || passError || userError}
+								disabled={confirmError || passError || userError}
 								onClick={(e) => {
 									e.preventDefault();
 									//* If no errors, allow register function to fire:
