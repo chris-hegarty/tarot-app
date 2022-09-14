@@ -1,4 +1,3 @@
-import { logDOM } from "@testing-library/react";
 import React, { useContext, useState, useMemo } from "react";
 // No longer need useNavigate, but will need NavLink:
 import { NavLink, useNavigate } from "react-router-dom";
@@ -105,7 +104,7 @@ function RegisterPage() {
 								</div>
 							</div>
 							<input
-								value={password}
+								value={confirm}
 								onChange={(e) => {
 									setConfirm(e.target.value);
 								}}
@@ -122,7 +121,6 @@ function RegisterPage() {
 								onClick={(e) => {
 									e.preventDefault();
 									//* If no errors, allow register function to fire:
-									console.log("whats here");
 									if (!confirmError && !passError && !userError) {
 										register(username, password);
 										navigate("/login");
