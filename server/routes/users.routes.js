@@ -4,13 +4,29 @@ const router = express.Router();
 const jwt = require("jsonwebtoken");
 const { register, login } = require("../models/users.model");
 
+router.get("/verify", auth, (req, res) => {
+	return res.send({
+		success: true,
+		data: { username: req.user.username, id: req.user.id },
+		error: null,
+	});
+});
+
+router.get("/logout", (req, res) => {
+	//*Delete the jwt cookie(s) and send a response
+	//*Clear it with express.
+	res.clearCookie("jwt");
+
+	return res.send({ success: true, data: null, error: null });
+});
+
 router.post("/login", async (req, res) => {
 	const { username, password } = req.body;
 	if (!verifyData(username, password)) {
 		return res.send({
 			success: false,
 			data: null,
-			error: "Username and/or password do not match.",
+			error: "Invalid data provided.",
 		});
 	}
 	const resObj = await login(username, password);
@@ -26,12 +42,6 @@ router.post("/login", async (req, res) => {
 	res.send(resObj);
 });
 
-router.get("/logout", (req, res) => {
-	res.clearCookie("jwt");
-
-	return res.send({ success: true, data: null, error: null });
-});
-
 router.put("/register", async (req, res) => {
 	const { username, password } = req.body;
 	if (!verifyData(username, password)) {
@@ -45,17 +55,6 @@ router.put("/register", async (req, res) => {
 	const resObj = await register(username, password);
 
 	res.send(resObj);
-});
-
-router.get("/verify", auth, (req, res) => {
-	return res.send({
-		success: true,
-		data: {
-			username: req.user.username,
-			id: req.user.id,
-		},
-		error: null,
-	});
 });
 
 function verifyData(username, password) {
