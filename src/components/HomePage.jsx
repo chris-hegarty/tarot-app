@@ -25,9 +25,8 @@ function HomePage(props) {
 						area on your mind.
 					</p>
 					<p>
-						You are going to get a three-card, "linear" tarot card spread.
-						Depending on your focus, the first, second and third cards can
-						suggest perspectives in a number of ways, like:
+						You are going to get a three-card, "linear" tarot card spread. There
+						are a number of ways you can approach the cards, like:
 					</p>
 					<ul>
 						<li>Past | Present | Future</li>
@@ -35,9 +34,8 @@ function HomePage(props) {
 						<li>Option 1 | Option 2 | Advice/Direction</li>
 					</ul>
 					<p>
-						Think about the question you are focused on, and what three "here to
-						there" points the cards could help you think on. Then, scroll down
-						and click on "Get Cards".
+						Think about your question and approach. Then, scroll down and click
+						"Get Cards".
 					</p>
 				</div>
 				<div className="half right lg:basis-1/2">
@@ -67,12 +65,14 @@ function HomePage(props) {
 				</div>
 				<div
 					className={
-						!show ? "cards-container hidden" : "cards-container px-10 py-6 mb-8"
+						!show
+							? "cards-container hidden"
+							: "cards-container sm:px-10 sm:py-6 mb-8"
 					}
 					ref={cardScroll}
 				>
-					<h2 className="text-center">Now, click on each card to reveal it.</h2>
-					<div className="flex justify-evenly px-10 mobile-cards">
+					<h2 className="text-center">Now, click each to reveal it.</h2>
+					<div className="flex justify-evenly sm:px-10 mobile-cards">
 						{error && error}
 						{cards &&
 							cards.length > 0 &&

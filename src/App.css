@@ -47,9 +47,6 @@ main.login-register {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 label {
 	margin: 0;
@@ -60,6 +57,11 @@ label {
 	backdrop-filter: blur(30px);
 	border-radius: 12px;
 	width: 75%;
+}
+@media screen and (max-width: 479px) {
+	.form-container {
+		width: 95%;
+	}
 }
 label,
 .error.form-text,
@@ -177,6 +179,10 @@ section.home-top {
 	flex-direction: column;
 	align-items: center;
 	margin: auto;
+}
+#back {
+	background: #000;
+	border-radius: 10px;
 }
 .card-front,
 .card-back {

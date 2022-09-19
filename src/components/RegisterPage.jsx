@@ -34,10 +34,13 @@ function RegisterPage() {
 	);
 	return (
 		<>
-			<main className="main login-register flex flex-col justify-center align-middle">
-				<form className="flex content-center justify-center">
-					<div className="form-container flex flex-col justify-evenly align-middle p-10">
+			<main className="main login-register md:flex md:justify-center md:items-center">
+				<form className="flex justify-center">
+					<div className="form-container flex flex-col justify-evenly align-middle p-4">
 						<div className="flex flex-col form-element">
+							<h2 className="lr-headers text-white text-3xl text-center">
+								Register
+							</h2>
 							<div className="top-level flex justify-between items-center">
 								<label htmlFor="user-name">Username</label>
 								<div
