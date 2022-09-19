@@ -38,6 +38,10 @@
 }
 
 /* Begin Tarot Card CSS */
+
+html {
+	scroll-behavior: smooth;
+}
 main.login-register {
 	background-image: url("../public/images/tarot-hero.jpg");
 	background-repeat: no-repeat;

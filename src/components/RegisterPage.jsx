@@ -121,7 +121,7 @@ function RegisterPage() {
 									}
 								}}
 								type="submit"
-								className="w-full bg-red-700 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"
+								className="text-lg uppercase w-full bg-red-700 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"
 							>
 								Submit
 							</button>
