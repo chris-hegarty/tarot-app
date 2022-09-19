@@ -11,14 +11,14 @@ function HomePage(props) {
 
 	let cardScroll = useRef(null);
 
-	const handleScroll = useCallback(() => {
+	const handleScroll = () => {
 		cardScroll.current.scrollIntoView();
-	}, [show]);
+	};
 
 	return (
 		<main>
-			<section className="home-top flex">
-				<div className="half left basis-1/2 p-16">
+			<section className="home-top flex flex-wrap">
+				<div className="half left lg:basis-1/2 lg:p-16 p-4">
 					<h2 className="">Getting Started</h2>
 					<p>
 						First step: Focus on a question, problem, decision or any uncertain
@@ -40,13 +40,12 @@ function HomePage(props) {
 						and click on "Get Cards".
 					</p>
 				</div>
-				<div className="half right basis-1/2">
+				<div className="half right lg:basis-1/2">
 					<picture>
 						<img
 							src="../../images/card-mix.png"
 							alt="Mix of Tarot Cards."
-							width="600"
-							className="p-16 rounded"
+							className="lg:p-16 lg:rounded"
 						/>
 					</picture>
 				</div>
@@ -70,11 +69,10 @@ function HomePage(props) {
 					className={
 						!show ? "cards-container hidden" : "cards-container px-10 py-6 mb-8"
 					}
+					ref={cardScroll}
 				>
-					<h2 ref={cardScroll} className="text-center">
-						Now, click on each card to reveal it.
-					</h2>
-					<div className="flex justify-evenly px-10">
+					<h2 className="text-center">Now, click on each card to reveal it.</h2>
+					<div className="flex justify-evenly px-10 mobile-cards">
 						{error && error}
 						{cards &&
 							cards.length > 0 &&

@@ -156,10 +156,6 @@ ul {
 	background-position: 50% 80%;
 }
 
-.home-top img {
-	border-radius: 68px;
-}
-
 section.home-top {
 	background-color: #d2cec5;
 }
@@ -206,4 +202,13 @@ section.home-top {
 
 .card-front.flipped {
 	transform: perspective(1000px) rotateY(-180deg);
+}
+@media screen and (max-width: 479px) {
+	.home-top img {
+		display: none;
+	}
+	.mobile-cards {
+		flex-direction: column;
+		gap: 10px;
+	}
 }
