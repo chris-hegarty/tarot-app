@@ -24,7 +24,11 @@ function TarotCard({ card }) {
 						<img
 							src={`../../images/cards/${name_short}.jpg`}
 							alt={`${name}`}
-							className={revealCard ? "card-back flipped" : "card-back"}
+							className={
+								revealCard
+									? "card-back flipped bg-black rounded-lg"
+									: "card-back"
+							}
 							id="back"
 						/>
 						<img
@@ -40,19 +44,33 @@ function TarotCard({ card }) {
 				className={
 					!revealCard
 						? "section-right card-meaning hidden"
-						: "section-right card-meaning"
+						: "section-right card-meaning flex flex-col items-stretch sp-2 border-gray-200 border-2 justify-items-stretch rounded-xl shadow-xl mt-4 p-4"
 				}
 			>
-				<h3>{name}</h3>
-				<div className="card-suit-and-type">
-					<p>Suit: {suit}</p>
-					<p>Type: {type}</p>
-					<p>Orientation: {orientation}</p>
+				<div className="flex flex-col justify-center items-center p-2 bg-yellow-500 rounded-lg">
+					<h3 className="text-3xl mb-0">{name}</h3>
+					<p className="uppercase font-bold text-sm mb-0">
+						Orientation: {orientation}
+					</p>
 				</div>
-				<h4>Meaning</h4>
-				<p>{meaning}</p>
-				<h4>Description</h4>
-				<p>{desc}</p>
+				<div className="my-4">
+					<p className="mb-0">{desc}</p>
+				</div>
+				<hr className="my-4"></hr>
+				<div className="meaning">
+					<span>Meaning: </span>
+					<span>{meaning}</span>
+				</div>
+				<div className="card-suit-and-type flex justify-between gap-4 mt-4">
+					<div className="flex gap-1">
+						<h4 className="mb-0">Suit:</h4>
+						<p className="capitalize mb-0"> {suit}</p>
+					</div>
+					<div className="flex gap-1">
+						<h4 className="capitalize mb-0">Type:</h4>
+						<p className="capitalize mb-0">{type}</p>
+					</div>
+				</div>
 			</div>
 		</article>
 	);
