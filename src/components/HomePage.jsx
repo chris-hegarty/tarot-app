@@ -51,7 +51,7 @@ function HomePage(props) {
 				</div>
 			</section>
 			<section className="card-section">
-				<div className="button-container flex justify-center py-16">
+				<div className="button-container flex justify-center py-10">
 					<button
 						onClick={(e) => {
 							e.preventDefault();
