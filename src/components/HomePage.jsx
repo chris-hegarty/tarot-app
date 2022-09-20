@@ -1,4 +1,11 @@
-import React, { useState, useContext, useCallback, useRef } from "react";
+import React, {
+	useState,
+	useContext,
+	useCallback,
+	useRef,
+	useEffect,
+} from "react";
+// import { useLocation } from "react-router-dom";
 import useAxios from "../hooks/useAxios";
 import { TarotCardContext } from "../context/TarotCardContext";
 import TarotCard from "./TarotCard";
@@ -9,11 +16,14 @@ function HomePage(props) {
 	const { data: cards, error } = useAxios(url);
 	const { revealCard, setRevealCard } = useContext(TarotCardContext);
 
+	// const { hash } = useLocation();
+
 	let cardScroll = useRef(null);
 
-	const handleScroll = () => {
-		cardScroll.current.scrollIntoView();
-	};
+	const handleScroll = useCallback(
+		() => cardScroll.current.scrollIntoView(),
+		[show],
+	);
 
 	return (
 		<main>
@@ -56,7 +66,6 @@ function HomePage(props) {
 							setShow(true);
 							setUrl(`/random/?n=3`);
 							handleScroll();
-							// setMeaning()
 						}}
 						className="text-lg uppercase bg-red-700 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"
 					>
